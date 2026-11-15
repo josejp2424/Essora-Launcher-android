@@ -70,6 +70,7 @@ import java.util.Set;
 
 /** Lightweight Essora home screen: no persistent service and no external UI dependencies. */
 public final class MainActivity extends Activity {
+    private static final String SUPPORT_URL = "https://paypal.me/essoralinux";
     private static final int WALLPAPER_PICKER = 45;
     private static final int HOME_ROLE_REQUEST = 29;
     private static final int TORCH_PERMISSION_REQUEST = 46;
@@ -1176,6 +1177,9 @@ public final class MainActivity extends Activity {
                 getString(R.string.wallpaper_desc), this::chooseWallpaper);
         settingsRow(list, android.R.drawable.ic_menu_myplaces, getString(R.string.home_default),
                 getString(R.string.home_default_desc), this::requestHomeRole);
+        // Optional contribution: opens PayPal.Me only when the user taps this row.
+        settingsRow(list, R.drawable.essora_action_support, getString(R.string.support_essora),
+                getString(R.string.support_essora_desc), this::openSupportLink);
         settingsRow(list, android.R.drawable.ic_menu_info_details, getString(R.string.about),
                 getString(R.string.app_name) + " " + installedVersion(), () ->
                 new AlertDialog.Builder(this).setTitle(R.string.app_name)
@@ -1183,6 +1187,17 @@ public final class MainActivity extends Activity {
                                 + "\n" + getString(R.string.about_developer) + ": Essora Project"
                                 + "\nFreedom to Create. Freedom to Explore.")
                         .setPositiveButton(android.R.string.ok, null).show());
+    }
+
+    /** No payment SDK, browser tracking, or background process: the user decides in PayPal. */
+    private void openSupportLink() {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(SUPPORT_URL));
+        intent.addCategory(Intent.CATEGORY_BROWSABLE);
+        try {
+            startActivity(intent);
+        } catch (android.content.ActivityNotFoundException | SecurityException ex) {
+            Toast.makeText(this, R.string.support_essora_unavailable, Toast.LENGTH_LONG).show();
+        }
     }
 
     /** Always read the installed package version; never hard-code About text. */

@@ -10,6 +10,9 @@
     <string name="wallpaper_desc">Choose a home or lock-screen wallpaper</string>
     <string name="home_default">Default home app</string>
     <string name="home_default_desc">Select Essora as your default launcher</string>
+    <string name="support_essora">Support Essora</string>
+    <string name="support_essora_desc">You can support Essora development with a voluntary contribution through PayPal.</string>
+    <string name="support_essora_unavailable">No app is available to open PayPal.</string>
     <string name="about">About</string>
     <string name="choose_app">Select application</string>
     <string name="app_missing">Application no longer available</string>

@@ -10,6 +10,7 @@ Essora Launcher es un launcher Android de código abierto. El proyecto no incluy
 - **Acceso a archivos**: los fondos e iconos se importan con el selector de documentos de Android, sin pedir acceso general al almacenamiento.
 - **Paquetes de iconos**: `<queries>` permite descubrir packs ADW/Nova conocidos sin solicitar `QUERY_ALL_PACKAGES`.
 - **Compartir**: se usa `ACTION_SEND` y un proveedor privado para dar acceso temporal de lectura al archivo `.essoratheme` compartido.
+- **Colaborar con Essora**: solo cuando el usuario toca esa opción, `ACTION_VIEW` abre `https://paypal.me/essoralinux` en una aplicación compatible. No se integra SDK de pagos ni se solicitan permisos extra; cualquier aportación es opcional.
 
 Los temas personalizados se guardan en el almacenamiento de la aplicación. Su importación valida rutas, tamaños, imágenes y metadatos. Las imágenes de terceros solo deben redistribuirse con permiso compatible; los créditos se conservan.
 
