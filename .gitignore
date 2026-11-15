@@ -1,0 +1,35 @@
+# Android SDK / IDE
+.gradle/
+**/build/
+local.properties
+.idea/
+*.iml
+.cxx/
+.externalNativeBuild/
+
+# Generated packages and logs
+dist/
+*.apk
+*.aab
+*.apks
+*.log
+*.hprof
+captures/
+
+# Secrets: never publish the official signing key or credentials
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+.env
+.env.*
+*.asc
+*.gpg
+credentials.properties
+keystore.properties
+signing.properties
+*.orig
+*.swp
+.DS_Store

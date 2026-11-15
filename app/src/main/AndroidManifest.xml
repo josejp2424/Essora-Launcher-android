@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <uses-permission android:name="android.permission.SET_WALLPAPER" />
+    <!-- Only needed for the optional flashlight gesture. Requested at runtime, on first use. -->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-feature android:name="android.hardware.camera.flash" android:required="false" />
+    <queries>
+        <!-- Discover installed ADW/Nova-compatible icon packs without QUERY_ALL_PACKAGES. -->
+        <intent><action android:name="org.adw.launcher.THEMES" /></intent>
+        <intent><action android:name="com.novalauncher.THEME" /></intent>
+        <intent><action android:name="com.dlto.atom.launcher.THEME" /></intent>
+        <intent><action android:name="com.motorola.launcher.ACTION_ICON_PACK" /></intent>
+        <intent><action android:name="ch.deletescape.lawnchair.ICONPACK" /></intent>
+        <intent><action android:name="ginlemon.smartlauncher.THEMES" /></intent>
+        <intent><action android:name="com.sonymobile.home.ICON_PACK" /></intent>
+        <intent><action android:name="com.gau.go.launcherex.theme" /></intent>
+        <!-- Arcticons variants use different package names. -->
+        <package android:name="com.donnnno.arcticons" />
+        <package android:name="com.donnnno.arcticons.light" />
+        <package android:name="com.donnnno.arcticons.you" />
+        <package android:name="com.donnnno.arcticons.daynight" />
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent>
+        <!-- Only resolve camera, alarm, and calendar activities when the user explicitly taps them. -->
+        <intent><action android:name="android.media.action.STILL_IMAGE_CAMERA" /></intent>
+        <intent><action android:name="android.media.action.IMAGE_CAPTURE" /></intent>
+        <intent><action android:name="android.intent.action.SHOW_ALARMS" /></intent>
+        <intent><action android:name="android.intent.action.SET_ALARM" /></intent>
+        <intent>
+            <action android:name="android.intent.action.MAIN" />
+            <category android:name="android.intent.category.APP_CALENDAR" />
+        </intent>
+    </queries>
+    <application android:allowBackup="true" android:supportsRtl="true"
+        android:label="@string/app_name" android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher" android:theme="@android:style/Theme.Material.NoActionBar"
+        android:usesCleartextTraffic="false">
+        <!-- Read-only grant for sharing an exported .essoratheme through Android Sharesheet. -->
+        <provider android:name=".ThemeShareProvider"
+            android:authorities="${applicationId}.themes"
+            android:exported="false" android:grantUriPermissions="true" />
+        <activity android:name=".ThemeCreatorActivity" android:exported="false" />
+        <activity android:name=".MainActivity" android:exported="true" android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>

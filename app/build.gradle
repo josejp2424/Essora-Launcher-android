@@ -1,0 +1,20 @@
+plugins { id 'com.android.application' }
+android {
+    namespace 'org.essora.launcher'
+    compileSdk 36
+    defaultConfig {
+        applicationId 'org.essora.launcher'
+        minSdk 26
+        targetSdk 36
+        versionCode 24
+        versionName '1.0.23'
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_17
+        targetCompatibility JavaVersion.VERSION_17
+    }
+    buildTypes {
+        release { minifyEnabled false }
+        debug { applicationIdSuffix '.debug'; versionNameSuffix '-debug' }
+    }
+}

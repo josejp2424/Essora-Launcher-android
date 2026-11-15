@@ -1,0 +1,9 @@
+{
+  "format": "essoraicons",
+  "formatVersion": 1,
+  "license": "GPL-3.0-only",
+  "author": "Essora",
+  "icons": {
+    "com.android.settings": "icons/settings.webp"
+  }
+}
