@@ -39,7 +39,7 @@ The project uses Android SDK API 36, Android Build Tools 35.0.0, Java 17, and Gr
 
 The signed release APK will be generated at:
 
-`dist/Essora-Launcher-1.0.24-release.apk`
+`dist/Essora-Launcher-1.0.25-release.apk`
 
 The build script requires a **release keystore stored outside this repository** at `$HOME/.local/share/essora-launcher/signing/essora-launcher-release.jks` (or under `$XDG_DATA_HOME`). If you already installed a previous build, **keep using the same keystore and password**; signing with a new key will prevent updating that installation. For a first-time independent build, `./scripts/crear-firma.sh` can create your own key. Never upload the keystore or signing credentials.
 
@@ -49,7 +49,7 @@ To build a separate test APK without release signing:
 ./build.sh --debug
 ```
 
-The application ID for release builds is `org.essora.launcher` (`versionName 1.0.24`, `versionCode 25`). The minimum supported Android API is 26.
+The application ID for release builds is `org.essora.launcher` (`versionName 1.0.25`, `versionCode 26`). The minimum supported Android API is 26.
 
 ## Themes and icons
 

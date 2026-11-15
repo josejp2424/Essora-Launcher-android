@@ -31,6 +31,10 @@ import android.text.Editable;
 import android.text.TextWatcher;
 import android.text.TextUtils;
 import android.text.format.DateFormat;
+import android.text.SpannableStringBuilder;
+import android.text.Spanned;
+import android.text.style.RelativeSizeSpan;
+import android.text.style.SuperscriptSpan;
 import android.util.TypedValue;
 import android.view.Gravity;
 import android.view.GestureDetector;
@@ -354,8 +358,26 @@ public final class MainActivity extends Activity {
     private void updateClock() {
         if (timeView != null) {
             Locale locale = getResources().getConfiguration().getLocales().get(0);
-            String pattern = prefs.getBoolean("clock_24h", true) ? "HH:mm" : "h:mm a";
-            timeView.setText(new SimpleDateFormat(pattern, locale).format(new Date()));
+            Date now = new Date();
+            if (prefs.getBoolean("clock_24h", true)) {
+                // Keep the 24-hour clock unchanged.
+                timeView.setText(new SimpleDateFormat("HH:mm", locale).format(now));
+            } else {
+                // Keep the hour large and show the localized AM/PM as a small raised suffix.
+                String hours = new SimpleDateFormat("h:mm", locale).format(now);
+                String period = new SimpleDateFormat("a", locale).format(now);
+                SpannableStringBuilder clock = new SpannableStringBuilder(hours);
+                if (!period.isEmpty()) {
+                    clock.append(" ");
+                    int start = clock.length();
+                    clock.append(period);
+                    clock.setSpan(new RelativeSizeSpan(0.36f), start, clock.length(),
+                            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                    clock.setSpan(new SuperscriptSpan(), start, clock.length(),
+                            Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+                }
+                timeView.setText(clock);
+            }
         }
         if (dateView != null) {
             Locale locale = getResources().getConfiguration().getLocales().get(0);
