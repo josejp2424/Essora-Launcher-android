@@ -6,7 +6,8 @@
       "name": "Fernandez Rosana",
       "amount": 10.00,
       "currency": "USD",
-      "note": ""
+      "note": "",
+      "public_consent": true
     }
   ]
 }
