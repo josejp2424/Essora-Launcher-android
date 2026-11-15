@@ -11,6 +11,9 @@
     <string name="wallpaper_desc">Hintergrund für Start- oder Sperrbildschirm wählen</string>
     <string name="home_default">Standard-Startbildschirm</string>
     <string name="home_default_desc">Essora als Standard-Launcher auswählen</string>
+    <string name="support_essora">Essora unterstützen</string>
+    <string name="support_essora_desc">Du kannst die Entwicklung von Essora mit einem freiwilligen Beitrag über PayPal unterstützen.</string>
+    <string name="support_essora_unavailable">Keine App zum Öffnen von PayPal verfügbar.</string>
     <string name="about">Über</string>
     <string name="choose_app">Anwendung auswählen</string>
     <string name="app_missing">Diese Anwendung ist nicht mehr verfügbar</string>
@@ -156,4 +159,15 @@
     <string name="creator_share_preparing">Thema zum Teilen vorbereiten…</string>
     <string name="creator_share_chooser">Thema teilen mit…</string>
     <string name="about_developer">Entwickler</string>
+    <string name="supporters_title">Unterstützer &amp; Spenden</string>
+    <string name="supporters_intro">Essora Launcher ist 100% frei und kostenlos. Freiwillige Spenden unterstützen die Weiterentwicklung.</string>
+    <string name="supporters_donate_btn">Über PayPal spenden</string>
+    <string name="supporters_donate_sub">Öffnet paypal.me/essoralinux im Browser</string>
+    <string name="supporters_ranking_header">Danke für deine Unterstützung von Essora</string>
+    <string name="supporters_empty">Noch keine Unterstützer eingetragen.</string>
+    <string name="supporters_privacy_notice">Es werden nur zur Veröffentlichung freigegebene Namen oder Spitznamen angezeigt. Spenden schalten keine Funktionen oder Belohnungen frei.</string>
+    <string name="supporters_status_loading">GitHub wird geprüft...</string>
+    <string name="supporters_status_updated">Unterstützerliste von GitHub aktualisiert.</string>
+    <string name="supporters_status_cached">Offline oder GitHub nicht verfügbar. Letzte gespeicherte Liste wird angezeigt.</string>
+    <string name="supporters_refresh">Aktualisieren</string>
 </resources>

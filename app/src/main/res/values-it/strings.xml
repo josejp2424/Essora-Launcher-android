@@ -11,6 +11,9 @@
     <string name="wallpaper_desc">Scegli lo sfondo della schermata iniziale o di blocco</string>
     <string name="home_default">Launcher predefinito</string>
     <string name="home_default_desc">Seleziona Essora come launcher predefinito</string>
+    <string name="support_essora">Sostieni Essora</string>
+    <string name="support_essora_desc">Puoi sostenere lo sviluppo di Essora con un contributo volontario tramite PayPal.</string>
+    <string name="support_essora_unavailable">Nessuna app disponibile per aprire PayPal.</string>
     <string name="about">Informazioni</string>
     <string name="choose_app">Scegli applicazione</string>
     <string name="app_missing">Applicazione non più disponibile</string>
@@ -156,4 +159,15 @@
     <string name="creator_share_preparing">Preparazione del tema da condividere…</string>
     <string name="creator_share_chooser">Condividi tema con…</string>
     <string name="about_developer">Sviluppatore</string>
+    <string name="supporters_title">Sostenitori e Donazioni</string>
+    <string name="supporters_intro">Essora Launcher è 100% libero e gratuito. Le donazioni volontarie aiutano a sostenere lo sviluppo.</string>
+    <string name="supporters_donate_btn">Dona tramite PayPal</string>
+    <string name="supporters_donate_sub">Apre paypal.me/essoralinux nel browser</string>
+    <string name="supporters_ranking_header">Grazie per il tuo sostegno a Essora</string>
+    <string name="supporters_empty">Nessun sostenitore ancora registrato.</string>
+    <string name="supporters_privacy_notice">Sono mostrati solo nomi o soprannomi autorizzati alla pubblicazione. Le donazioni non sbloccano funzioni o premi.</string>
+    <string name="supporters_status_loading">Controllo di GitHub...</string>
+    <string name="supporters_status_updated">Elenco aggiornato da GitHub.</string>
+    <string name="supporters_status_cached">Offline o GitHub non disponibile. Ultimo elenco salvato.</string>
+    <string name="supporters_refresh">Aggiorna</string>
 </resources>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Essora Launcher</title>
+  <style>
+    body { font-family: system-ui, -apple-system, sans-serif; background: #0b100d; color: #eef3ee; max-width: 760px; margin: 2rem auto; padding: 0 1.2rem; line-height: 1.6; }
+    h1, h2 { color: #86c744; }
+    .card { background: #161e19; border: 1px solid #3c5442; border-radius: 12px; padding: 1.2rem; margin-bottom: 1.2rem; }
+  </style>
+</head>
+<body>
+  <h1>Política de Privacidad — Essora Launcher</h1>
+  <p><strong>Última actualización:</strong> 15 de noviembre de 2026 · <strong>Desarrollador:</strong> Essora Project</p>
+
+  <div class="card">
+    <h2>1. Recopilación de datos</h2>
+    <p><strong>Essora Launcher no integra anuncios, analíticas ni rastreadores y no transmite los iconos, gestos, temas ni configuraciones personales del dispositivo.</strong> La app usa el permiso <code>android.permission.INTERNET</code> únicamente para consultar, bajo demanda, la lista pública de colaboradores alojada en GitHub cuando el usuario abre esa sección o pulsa Actualizar. GitHub, como proveedor de alojamiento, puede recibir la dirección IP y datos técnicos de la conexión según su propia política de privacidad. No se envía a GitHub ninguna identificación de cuenta de Essora.</p>
+  </div>
+
+  <div class="card">
+    <h2>2. Uso de permisos del dispositivo</h2>
+    <ul>
+      <li><strong>Cámara (<code>android.permission.CAMERA</code>):</strong> Se solicita únicamente en tiempo de ejecución cuando el usuario activa el gesto opcional de linterna, y se utiliza exclusivamente para encender o apagar el flash LED trasero. No se capturan fotos ni vídeos.</li>
+      <li><strong>Fondo de pantalla (<code>android.permission.SET_WALLPAPER</code>):</strong> Se emplea solo cuando el usuario elige aplicar un fondo desde la configuración del launcher.</li>
+      <li><strong>Selector de documentos del sistema:</strong> Las imágenes y paquetes de temas/iconos (<code>.essoratheme</code> / <code>.essoraicons</code>) se importan mediante el selector nativo de Android y se almacenan localmente en el espacio privado de la aplicación.</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>3. Aportes voluntarios externos</h2>
+    <p>La sección <em>Colaborar con Essora</em> incluye un enlace opcional que abre <code>paypal.me/essoralinux</code> en el navegador web del usuario. Dicha transacción se realiza fuera de la aplicación bajo las políticas de PayPal y no desbloquea funciones digitales dentro de la app.</p>
+  </div>
+
+  <div class="card">
+    <h2>4. Lista pública de colaboradores</h2>
+    <p>El contenido del archivo público <code>supporters.json</code> se descarga mediante HTTPS desde <code>raw.githubusercontent.com</code> al abrir Colaboradores o solicitar una actualización. Se guarda una copia de lectura en el almacenamiento privado de la aplicación para que la lista siga disponible sin conexión. Este dato se puede eliminar borrando los datos de la aplicación. No hay sincronización periódica en segundo plano.</p>
+    <p>Solo se muestran apodos y cantidades cuya publicación haya sido expresamente autorizada por la persona que donó. El mantenimiento de la lista es manual y no implica integración con PayPal: la app no lee transacciones, cuentas ni identificadores de pago. La lista y sus importes son accesibles públicamente a través de GitHub. Un donante puede pedir al desarrollador que retire su entrada de futuras publicaciones.</p>
+  </div>
+
+  <div class="card">
+    <h2>5. Contacto</h2>
+    <p>Para consultas sobre privacidad o código fuente (licencia GNU GPL-3.0), puedes contactar a <strong>Essora Project</strong> a través de nuestro repositorio oficial en GitHub.</p>
+  </div>
+</body>
+</html>

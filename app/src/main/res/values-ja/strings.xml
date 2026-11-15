@@ -11,6 +11,9 @@
     <string name="wallpaper_desc">ホーム画面またはロック画面の壁紙を選択</string>
     <string name="home_default">デフォルトのホーム</string>
     <string name="home_default_desc">Essoraを標準ランチャーに設定</string>
+    <string name="support_essora">Essora を支援</string>
+    <string name="support_essora_desc">PayPal から任意の支援金で Essora の開発を応援できます。</string>
+    <string name="support_essora_unavailable">PayPal を開けるアプリがありません。</string>
     <string name="about">アプリについて</string>
     <string name="choose_app">アプリを選択</string>
     <string name="app_missing">このアプリは利用できません</string>
@@ -156,4 +159,15 @@
     <string name="creator_share_preparing">共有するテーマを準備中…</string>
     <string name="creator_share_chooser">テーマを共有するアプリ…</string>
     <string name="about_developer">開発者</string>
+    <string name="supporters_title">サポーターと寄付</string>
+    <string name="supporters_intro">Essora Launcher は完全無料のオープンソースです。任意の寄付が開発を支えます。</string>
+    <string name="supporters_donate_btn">PayPal で支援する</string>
+    <string name="supporters_donate_sub">ブラウザで paypal.me/essoralinux を開きます</string>
+    <string name="supporters_ranking_header">Essora を応援していただきありがとうございます</string>
+    <string name="supporters_empty">まだサポーターは登録されていません。</string>
+    <string name="supporters_privacy_notice">公開が許可された名前やニックネームのみ表示されます。寄付によって機能や特典が追加されることはありません。</string>
+    <string name="supporters_status_loading">GitHub を確認中...</string>
+    <string name="supporters_status_updated">GitHub から支援者一覧を更新しました。</string>
+    <string name="supporters_status_cached">オフライン、または GitHub に接続できません。保存済みの一覧を表示します。</string>
+    <string name="supporters_refresh">更新</string>
 </resources>

@@ -6,8 +6,8 @@ android {
         applicationId 'org.essora.launcher'
         minSdk 26
         targetSdk 36
-        versionCode 26
-        versionName '1.0.25'
+        versionCode 29
+        versionName '1.0.28'
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_17

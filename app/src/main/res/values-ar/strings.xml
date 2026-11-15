@@ -11,6 +11,9 @@
     <string name="wallpaper_desc">اختر خلفية الشاشة الرئيسية أو شاشة القفل</string>
     <string name="home_default">الشاشة الرئيسية الافتراضية</string>
     <string name="home_default_desc">اجعل Essora المشغّل الافتراضي</string>
+    <string name="support_essora">ادعم Essora</string>
+    <string name="support_essora_desc">يمكنك دعم تطوير Essora بمساهمة طوعية عبر PayPal.</string>
+    <string name="support_essora_unavailable">لا يوجد تطبيق متاح لفتح PayPal.</string>
     <string name="about">حول التطبيق</string>
     <string name="choose_app">اختر تطبيقًا</string>
     <string name="app_missing">هذا التطبيق لم يعد متاحًا</string>
@@ -156,4 +159,15 @@
     <string name="creator_share_preparing">جارٍ تجهيز السمة للمشاركة…</string>
     <string name="creator_share_chooser">مشاركة السمة عبر…</string>
     <string name="about_developer">المطوّر</string>
+    <string name="supporters_title">الداعمون والتبرعات</string>
+    <string name="supporters_intro">مشغّل Essora مجاني ومفتوح المصدر بالكامل. التبرعات الطوعية تساعد في استمرار التطوير.</string>
+    <string name="supporters_donate_btn">التبرع عبر PayPal</string>
+    <string name="supporters_donate_sub">يفتح paypal.me/essoralinux في المتصفح</string>
+    <string name="supporters_ranking_header">شكرًا لدعم Essora</string>
+    <string name="supporters_empty">لا يوجد داعمون مسجلون بعد.</string>
+    <string name="supporters_privacy_notice">تظهر فقط الأسماء أو الألقاب التي وافق أصحابها على نشرها. التبرعات لا تفتح ميزات أو مكافآت.</string>
+    <string name="supporters_status_loading">جارٍ التحقق من GitHub...</string>
+    <string name="supporters_status_updated">تم تحديث قائمة الداعمين من GitHub.</string>
+    <string name="supporters_status_cached">لا يوجد اتصال أو GitHub غير متاح. يتم عرض آخر قائمة محفوظة.</string>
+    <string name="supporters_refresh">تحديث</string>
 </resources>

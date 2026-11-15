@@ -21,3 +21,13 @@ La firma oficial se mantiene fuera del proyecto, en el directorio privado del us
 ## Google Play Protect
 
 El proyecto aún no está disponible en Google Play y sigue en pruebas. Al instalar una APK obtenida fuera de Play Store, Play Protect puede solicitar su análisis. Esto no debe confundirse con una alerta de detección de software dañino. Si el sistema bloquea una compilación como potencialmente dañina, corresponde investigar la advertencia antes de distribuir o instalar esa compilación; no se recomienda desactivar Play Protect.
+
+## Colaboradores en GitHub (1.0.28)
+
+- **INTERNET**: solo se utiliza para leer `https://raw.githubusercontent.com/josejp2424/Essora-Launcher-android/main/supporters.json` al abrir el apartado Colaboradores o tocar **Actualizar**. Es una conexión HTTPS de solo lectura, con tiempo límite, validación de tamaño y caché local. No hay tareas de red periódicas.
+- GitHub puede observar la IP y los datos técnicos de la conexión. La app no transmite información personal de la instalación, identificadores de pago, lista de apps ni preferencias.
+- Los únicos nombres e importes publicados deben corresponder a personas que autorizaron expresamente su publicación. Se exige `public_consent: true` por entrada. El mantenedor debe conservar prueba de esa autorización y atender las solicitudes de retirada.
+- Las donaciones son opcionales y no otorgan funciones digitales, contenido exclusivo, medallas ni recompensas. Los aportes se gestionan fuera de la aplicación.
+- La lista pública puede modificarse en GitHub sin actualizar la APK. La app no escribe en GitHub ni necesita credenciales.
+
+La política actualizada se encuentra en `docs/privacy-policy.html`, y debe publicarse mediante una URL pública estable antes de presentar la app a Google Play.

@@ -11,6 +11,9 @@
     <string name="wallpaper_desc">Kezdőképernyő vagy zárolási háttér kiválasztása</string>
     <string name="home_default">Alapértelmezett kezdőképernyő</string>
     <string name="home_default_desc">Az Essora kiválasztása alapértelmezett indítóként</string>
+    <string name="support_essora">Essora támogatása</string>
+    <string name="support_essora_desc">A PayPalon keresztül önkéntes hozzájárulással támogathatod az Essora fejlesztését.</string>
+    <string name="support_essora_unavailable">Nem található alkalmazás a PayPal megnyitásához.</string>
     <string name="about">Névjegy</string>
     <string name="choose_app">Alkalmazás kiválasztása</string>
     <string name="app_missing">Az alkalmazás már nem érhető el</string>
@@ -156,4 +159,15 @@
     <string name="creator_share_preparing">Téma előkészítése megosztáshoz…</string>
     <string name="creator_share_chooser">Téma megosztása ezzel…</string>
     <string name="about_developer">Fejlesztő</string>
+    <string name="supporters_title">Támogatók és Adományok</string>
+    <string name="supporters_intro">Az Essora Launcher 100%-ban szabad és ingyenes. Az önkéntes támogatások segítik a fejlesztést.</string>
+    <string name="supporters_donate_btn">Támogatás PayPal-on keresztül</string>
+    <string name="supporters_donate_sub">Megnyitja a paypal.me/essoralinux oldalt</string>
+    <string name="supporters_ranking_header">Köszönjük, hogy támogatod az Essorát</string>
+    <string name="supporters_empty">Még nincsenek rögzített támogatók.</string>
+    <string name="supporters_privacy_notice">Csak a közzétételhez engedélyezett nevek vagy becenevek jelennek meg. Az adományok nem oldanak fel funkciókat vagy jutalmakat.</string>
+    <string name="supporters_status_loading">GitHub ellenőrzése...</string>
+    <string name="supporters_status_updated">Támogatói lista frissítve a GitHubról.</string>
+    <string name="supporters_status_cached">Nincs kapcsolat vagy a GitHub nem elérhető. Utoljára mentett lista látható.</string>
+    <string name="supporters_refresh">Frissítés</string>
 </resources>

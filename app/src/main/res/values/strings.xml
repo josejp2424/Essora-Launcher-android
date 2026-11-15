@@ -158,4 +158,15 @@
     <string name="creator_share_preparing">Preparing theme to share…</string>
     <string name="creator_share_chooser">Share theme with…</string>
     <string name="about_developer">Developer</string>
+    <string name="supporters_title">Supporters &amp; Donations</string>
+    <string name="supporters_intro">Essora Launcher is 100% free and open source. Voluntary donations help cover Play Store fees and development.</string>
+    <string name="supporters_donate_btn">Donate via PayPal</string>
+    <string name="supporters_donate_sub">Opens paypal.me/essoralinux in your browser</string>
+    <string name="supporters_ranking_header">Thank you for supporting Essora</string>
+    <string name="supporters_empty">No supporters listed yet. Be the first to support Essora!</string>
+    <string name="supporters_privacy_notice">Only names or nicknames approved for publication are displayed. Donations do not unlock features or rewards.</string>
+    <string name="supporters_status_loading">Checking GitHub...</string>
+    <string name="supporters_status_updated">Supporters updated from GitHub.</string>
+    <string name="supporters_status_cached">Offline or GitHub unavailable. Showing last saved list.</string>
+    <string name="supporters_refresh">Refresh</string>
 </resources>

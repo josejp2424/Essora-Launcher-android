@@ -5,7 +5,7 @@ set -Eeuo pipefail
 cd "$(dirname "$0")/.."
 VERSION="$(sed -n "s/^[[:space:]]*versionName[[:space:]]*'\([^']*\)'.*/\1/p" app/build.gradle | head -n 1)"
 [[ -n "$VERSION" ]] || { echo 'No se pudo leer versionName desde app/build.gradle' >&2; exit 1; }
-APK="${1:-dist/Essora-Launcher-${VERSION}-release.apk}"
+APK="${1:-dist/Essora-Launcher-${VERSION}.apk}"
 [[ -f "$APK" ]] || { echo "No existe la APK: $APK" >&2; exit 1; }
 SDK="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-$HOME/Android/Sdk}}"
 TOOLS="$SDK/build-tools/35.0.0"

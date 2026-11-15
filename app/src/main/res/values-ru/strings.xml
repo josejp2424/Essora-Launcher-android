@@ -11,6 +11,9 @@
     <string name="wallpaper_desc">Выберите обои главного экрана или экрана блокировки</string>
     <string name="home_default">Главный экран по умолчанию</string>
     <string name="home_default_desc">Выберите Essora в качестве лаунчера по умолчанию</string>
+    <string name="support_essora">Поддержать Essora</string>
+    <string name="support_essora_desc">Вы можете добровольно поддержать разработку Essora через PayPal.</string>
+    <string name="support_essora_unavailable">Нет приложения для открытия PayPal.</string>
     <string name="about">О программе</string>
     <string name="choose_app">Выбрать приложение</string>
     <string name="app_missing">Приложение больше недоступно</string>
@@ -156,4 +159,15 @@
     <string name="creator_share_preparing">Подготовка темы к отправке…</string>
     <string name="creator_share_chooser">Поделиться темой через…</string>
     <string name="about_developer">Разработчик</string>
+    <string name="supporters_title">Поддержка и Пожертвования</string>
+    <string name="supporters_intro">Essora Launcher полностью бесплатен и открыт. Добровольные пожертвования помогают развитию проекта.</string>
+    <string name="supporters_donate_btn">Поддержать через PayPal</string>
+    <string name="supporters_donate_sub">Открывает paypal.me/essoralinux в браузере</string>
+    <string name="supporters_ranking_header">Спасибо за поддержку Essora</string>
+    <string name="supporters_empty">Пока нет записей о пожертвованиях.</string>
+    <string name="supporters_privacy_notice">Отображаются только имена или псевдонимы, разрешённые к публикации. Пожертвования не открывают функции или награды.</string>
+    <string name="supporters_status_loading">Проверка GitHub...</string>
+    <string name="supporters_status_updated">Список сторонников обновлён с GitHub.</string>
+    <string name="supporters_status_cached">Нет сети или GitHub недоступен. Показан последний сохранённый список.</string>
+    <string name="supporters_refresh">Обновить</string>
 </resources>

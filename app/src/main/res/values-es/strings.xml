@@ -10,6 +10,9 @@
     <string name="wallpaper_desc">Elegí el fondo de inicio o de bloqueo</string>
     <string name="home_default">Launcher predeterminado</string>
     <string name="home_default_desc">Elegí Essora como pantalla de inicio</string>
+    <string name="support_essora">Colaborar con Essora</string>
+    <string name="support_essora_desc">Si querés, podés apoyar el desarrollo de Essora con un aporte voluntario por PayPal.</string>
+    <string name="support_essora_unavailable">No se encontró una aplicación para abrir PayPal.</string>
     <string name="about">Acerca de</string>
     <string name="choose_app">Elegir aplicación</string>
     <string name="app_missing">Esta aplicación ya no está disponible</string>
@@ -155,4 +158,15 @@
     <string name="creator_share_preparing">Preparando tema para compartir…</string>
     <string name="creator_share_chooser">Compartir tema con…</string>
     <string name="about_developer">Desarrollador</string>
+    <string name="supporters_title">Colaboradores y Donaciones</string>
+    <string name="supporters_intro">Essora Launcher es 100% libre y gratuito. Tu aporte voluntario ayuda a mantener el proyecto y su publicación.</string>
+    <string name="supporters_donate_btn">Aportar por PayPal</string>
+    <string name="supporters_donate_sub">Abre paypal.me/essoralinux en tu navegador</string>
+    <string name="supporters_ranking_header">Gracias por colaborar con Essora</string>
+    <string name="supporters_empty">Todavía no hay colaboradores registrados.</string>
+    <string name="supporters_privacy_notice">Solo se muestran nombres o apodos autorizados para su publicación. Las donaciones no desbloquean funciones ni recompensas.</string>
+    <string name="supporters_status_loading">Consultando GitHub...</string>
+    <string name="supporters_status_updated">Lista actualizada desde GitHub.</string>
+    <string name="supporters_status_cached">Sin conexión o GitHub no disponible. Se muestra la última lista guardada.</string>
+    <string name="supporters_refresh">Actualizar</string>
 </resources>

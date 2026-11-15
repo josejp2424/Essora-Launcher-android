@@ -11,6 +11,9 @@
     <string name="wallpaper_desc">Tria el fons de pantalla inicial o de bloqueig</string>
     <string name="home_default">Inici predeterminat</string>
     <string name="home_default_desc">Tria Essora com a llançador predeterminat</string>
+    <string name="support_essora">Col·labora amb Essora</string>
+    <string name="support_essora_desc">Pots donar suport al desenvolupament de Essora amb una aportació voluntària a través de PayPal.</string>
+    <string name="support_essora_unavailable">No hi ha cap aplicació disponible per obrir PayPal.</string>
     <string name="about">Quant a</string>
     <string name="choose_app">Tria una aplicació</string>
     <string name="app_missing">Aquesta aplicació ja no està disponible</string>
@@ -156,4 +159,15 @@
     <string name="creator_share_preparing">Preparant el tema per compartir…</string>
     <string name="creator_share_chooser">Compartir tema amb…</string>
     <string name="about_developer">Desenvolupador</string>
+    <string name="supporters_title">Col·laboradors i Donacions</string>
+    <string name="supporters_intro">Essora Launcher és 100% lliure i gratuït. Les aportacions voluntàries ajuden a mantenir el projecte.</string>
+    <string name="supporters_donate_btn">Donar per PayPal</string>
+    <string name="supporters_donate_sub">Obre paypal.me/essoralinux al navegador</string>
+    <string name="supporters_ranking_header">Gràcies per col·laborar amb Essora</string>
+    <string name="supporters_empty">Encara no hi ha col·laboradors registrats.</string>
+    <string name="supporters_privacy_notice">Només es mostren noms o sobrenoms autoritzats per publicar-se. Les donacions no desbloquegen funcions ni recompenses.</string>
+    <string name="supporters_status_loading">Consultant GitHub...</string>
+    <string name="supporters_status_updated">Llista actualitzada des de GitHub.</string>
+    <string name="supporters_status_cached">Sense connexió o GitHub no disponible. Es mostra la darrera llista desada.</string>
+    <string name="supporters_refresh">Actualitza</string>
 </resources>

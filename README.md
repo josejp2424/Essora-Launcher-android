@@ -18,7 +18,7 @@
 - Support for compatible installed ADW/Nova icon packs, including Arcticons, plus individual custom icons and Essora ZIP icon packs.
 - Eleven interface languages: English, Arabic, Catalan, German, Spanish, French, Italian, Portuguese, Hungarian, Russian and Japanese.
 - An optional **Support Essora** entry in Settings opens [PayPal.Me](https://paypal.me/essoralinux) in a compatible browser/app. No payment SDK, mandatory contribution or extra permission is needed.
-- No permanent background service and no external UI framework.
+- No permanent background service and no external UI framework. The supporters page performs an HTTPS read from GitHub only when opened or refreshed.
 
 ## Installation and Google Play Protect
 
@@ -27,29 +27,6 @@ Essora Launcher is **not currently available on Google Play**. When installing a
 The application is still undergoing testing. We hope to submit it to Google Play after testing, but there is no confirmed approval or release date.
 
 Google's documentation: [Play Protect warnings for developers](https://developers.google.com/android/play-protect/warning-dev-guidance).
-
-## Building on Essora GNU/Linux
-
-The project uses Android SDK API 36, Android Build Tools 35.0.0, Java 17, and Gradle 8.13. No Android Studio is required.
-
-```bash
-./scripts/instalar-sdk.sh  # only if the Android SDK is not installed
-./build.sh
-```
-
-The signed release APK will be generated at:
-
-`dist/Essora-Launcher-1.0.25-release.apk`
-
-The build script requires a **release keystore stored outside this repository** at `$HOME/.local/share/essora-launcher/signing/essora-launcher-release.jks` (or under `$XDG_DATA_HOME`). If you already installed a previous build, **keep using the same keystore and password**; signing with a new key will prevent updating that installation. For a first-time independent build, `./scripts/crear-firma.sh` can create your own key. Never upload the keystore or signing credentials.
-
-To build a separate test APK without release signing:
-
-```bash
-./build.sh --debug
-```
-
-The application ID for release builds is `org.essora.launcher` (`versionName 1.0.25`, `versionCode 26`). The minimum supported Android API is 26.
 
 ## Themes and icons
 
@@ -62,3 +39,18 @@ See [Theme and icon pack formats](FORMATOS-DE-TEMAS.md) and [Security and permis
 ## License
 
 Essora Launcher is free software under **GNU GPL-3.0**. See [LICENSE](LICENSE). Third-party icon packs and artwork keep their own licenses and attribution requirements.
+
+
+## Colaboradores y aportes voluntarios
+
+La sección **Configuración → Colaborar con Essora** muestra un enlace voluntario a PayPal y una lista pública de colaboradores. Las contribuciones no desbloquean funciones ni recompensas digitales.
+
+El listado se obtiene únicamente cuando el usuario abre esa pantalla o pulsa **Actualizar**, mediante HTTPS desde:
+
+[`supporters.json`](supporters.json)
+
+La aplicación conserva la última lista válida para usarla sin conexión. Los nombres y mensajes se muestran únicamente con autorización expresa de los colaboradores. Los importes del JSON son datos públicos y solo deben incluirse cuando exista consentimiento para publicarlos. **El archivo es público en GitHub:** no debe incluir correos electrónicos, identificadores de PayPal ni datos personales privados.
+
+La publicación de nuevos nombres no requiere actualizar la APK: basta con editar el JSON en la rama `main`. Las aportaciones no se verifican automáticamente con PayPal; el desarrollador las comprueba y actualiza manualmente. El muro muestra un agradecimiento con nombres autorizados, sin números de puesto ni importes en pantalla.
+
+Consulta la [política de privacidad](docs/privacy-policy.html) y [las reglas del listado](SUPPORTERS.md).

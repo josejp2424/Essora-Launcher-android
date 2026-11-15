@@ -3,7 +3,15 @@
 set -Eeuo pipefail
 cd "$(dirname "$0")"
 MODE="${1:-release}"
-[[ "$MODE" == release || "$MODE" == --debug ]] || { echo 'Uso: ./build.sh [--debug]' >&2; exit 2; }
+case "$MODE" in
+  --aab)
+    exec ./scripts/compilar-aab.sh ;;
+  --both)
+    ./build.sh release
+    exec ./scripts/compilar-aab.sh ;;
+  release|--debug) ;;
+  *) echo 'Uso: ./build.sh [--debug|--aab|--both]' >&2; exit 2 ;;
+esac
 export ANDROID_HOME="${ANDROID_HOME:-${ANDROID_SDK_ROOT:-$HOME/Android/Sdk}}"
 [[ -d "$ANDROID_HOME/platforms/android-36" ]] || {
   echo "Falta Android SDK API 36 en $ANDROID_HOME" >&2
@@ -29,7 +37,7 @@ mkdir -p dist
 # Read the version directly from Gradle to prevent mismatches on later releases.
 VERSION="$(sed -n "s/^[[:space:]]*versionName[[:space:]]*'\([^']*\)'.*/\1/p" app/build.gradle | head -n 1)"
 [[ -n "$VERSION" ]] || { echo 'ERROR: no se pudo leer versionName de app/build.gradle' >&2; exit 1; }
-OUTPUT="dist/Essora-Launcher-${VERSION}-release.apk"
+OUTPUT="dist/Essora-Launcher-${VERSION}.apk"
 rm -f "$OUTPUT"
 ./scripts/firmar-apk.sh "$INPUT" "$OUTPUT"
 echo

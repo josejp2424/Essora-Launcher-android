@@ -11,6 +11,9 @@
     <string name="wallpaper_desc">Choisissez le fond d’accueil ou de verrouillage</string>
     <string name="home_default">Accueil par défaut</string>
     <string name="home_default_desc">Définir Essora comme lanceur par défaut</string>
+    <string name="support_essora">Soutenir Essora</string>
+    <string name="support_essora_desc">Vous pouvez soutenir le développement de Essora avec une contribution volontaire via PayPal.</string>
+    <string name="support_essora_unavailable">Aucune application disponible pour ouvrir PayPal.</string>
     <string name="about">À propos</string>
     <string name="choose_app">Choisir une application</string>
     <string name="app_missing">Cette application n’est plus disponible</string>
@@ -156,4 +159,15 @@
     <string name="creator_share_preparing">Préparation du thème à partager…</string>
     <string name="creator_share_chooser">Partager le thème avec…</string>
     <string name="about_developer">Développeur</string>
+    <string name="supporters_title">Contributeurs et Dons</string>
+    <string name="supporters_intro">Essora Launcher est 100% libre et gratuit. Les dons volontaires soutiennent le développement.</string>
+    <string name="supporters_donate_btn">Faire un don via PayPal</string>
+    <string name="supporters_donate_sub">Ouvre paypal.me/essoralinux dans votre navigateur</string>
+    <string name="supporters_ranking_header">Merci de soutenir Essora</string>
+    <string name="supporters_empty">Aucun contributeur enregistré pour le moment.</string>
+    <string name="supporters_privacy_notice">Seuls les noms ou pseudonymes autorisés à être publiés sont affichés. Les dons ne débloquent aucune fonction ni récompense.</string>
+    <string name="supporters_status_loading">Consultation de GitHub...</string>
+    <string name="supporters_status_updated">Liste actualisée depuis GitHub.</string>
+    <string name="supporters_status_cached">Hors ligne ou GitHub indisponible. Dernière liste enregistrée affichée.</string>
+    <string name="supporters_refresh">Actualiser</string>
 </resources>

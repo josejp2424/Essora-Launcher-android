@@ -112,7 +112,7 @@ public final class MainActivity extends Activity {
     private long customThemeStamp = 0;
     private TextView timeView, dateView;
     private BatteryIndicator batteryView;
-    private int page = 0; // 0 home, 1 settings, 2 main apps, 3 dock, 4 drawer, 5 themes, 6 gestures
+    private int page = 0; // 0 home, 1 settings, 2 main apps, 3 dock, 4 drawer, 5 themes, 6 gestures, 7 supporters
     private String gestureSelectedSlot = "gesture_up";
     private boolean receiverRegistered = false;
     private final BroadcastReceiver clockReceiver = new BroadcastReceiver() {
@@ -221,7 +221,7 @@ public final class MainActivity extends Activity {
 
     @Override public void onBackPressed() {
         if (page == 0) { showHome(); }
-        else if (page == 2 || page == 3 || page == 5 || page == 6) { showSettings(); }
+        else if (page == 2 || page == 3 || page == 5 || page == 6 || page == 7) { showSettings(); }
         else { showHome(); }
     }
 
@@ -1199,9 +1199,9 @@ public final class MainActivity extends Activity {
                 getString(R.string.wallpaper_desc), this::chooseWallpaper);
         settingsRow(list, android.R.drawable.ic_menu_myplaces, getString(R.string.home_default),
                 getString(R.string.home_default_desc), this::requestHomeRole);
-        // Optional contribution: opens PayPal.Me only when the user taps this row.
+        // Supporters & voluntary PayPal contribution (Play Store compliant: no digital goods unlocked).
         settingsRow(list, R.drawable.essora_action_support, getString(R.string.support_essora),
-                getString(R.string.support_essora_desc), this::openSupportLink);
+                getString(R.string.support_essora_desc), this::showSupportersPage);
         settingsRow(list, android.R.drawable.ic_menu_info_details, getString(R.string.about),
                 getString(R.string.app_name) + " " + installedVersion(), () ->
                 new AlertDialog.Builder(this).setTitle(R.string.app_name)
@@ -1209,6 +1209,127 @@ public final class MainActivity extends Activity {
                                 + "\n" + getString(R.string.about_developer) + ": Essora Project"
                                 + "\nFreedom to Create. Freedom to Explore.")
                         .setPositiveButton(android.R.string.ok, null).show());
+    }
+
+    /** Shows a thank-you wall for supporters and a voluntary PayPal contribution link. */
+    private void showSupportersPage() {
+        page = 7;
+        LinearLayout root = darkPage(getString(R.string.supporters_title), this::showSettings);
+
+        TextView intro = text(getString(R.string.supporters_intro), 13.5f, false);
+        intro.setTextColor(0xffd7d7d7);
+        intro.setPadding(dp(4), dp(2), dp(4), dp(12));
+        root.addView(intro, new LinearLayout.LayoutParams(-1, -2));
+
+        // Prominent PayPal button card
+        LinearLayout paypalBtn = horizontal();
+        paypalBtn.setPadding(dp(14), dp(12), dp(14), dp(12));
+        paypalBtn.setBackground(shape(accentColor(), 14, 0xe6143221));
+
+        ImageView heartIcon = new ImageView(this);
+        heartIcon.setImageResource(R.drawable.essora_action_support);
+        heartIcon.setColorFilter(accentColor(), PorterDuff.Mode.SRC_IN);
+        LinearLayout.LayoutParams iconLp = new LinearLayout.LayoutParams(dp(28), dp(28));
+        iconLp.rightMargin = dp(12);
+        paypalBtn.addView(heartIcon, iconLp);
+
+        LinearLayout btnLabels = vertical();
+        btnLabels.addView(text(getString(R.string.supporters_donate_btn), 16, true));
+        TextView btnSub = text(getString(R.string.supporters_donate_sub), 12, false);
+        btnSub.setTextColor(0xffd4e7d4);
+        btnSub.setPadding(0, dp(2), 0, 0);
+        btnLabels.addView(btnSub);
+        paypalBtn.addView(btnLabels, new LinearLayout.LayoutParams(0, -2, 1));
+
+        TextView arrow = text("↗", 22, true);
+        arrow.setTextColor(accentColor());
+        arrow.setGravity(Gravity.CENTER);
+        paypalBtn.addView(arrow, new LinearLayout.LayoutParams(dp(28), dp(36)));
+
+        LinearLayout.LayoutParams btnParams = new LinearLayout.LayoutParams(-1, -2);
+        btnParams.bottomMargin = dp(14);
+        root.addView(paypalBtn, btnParams);
+        paypalBtn.setOnClickListener(v -> openSupportLink());
+
+        TextView wallHeader = text(getString(R.string.supporters_ranking_header), 15, true);
+        wallHeader.setTextColor(accentColor());
+        wallHeader.setPadding(dp(4), dp(2), dp(4), dp(8));
+        root.addView(wallHeader, new LinearLayout.LayoutParams(-1, -2));
+
+        TextView notice = text(getString(R.string.supporters_privacy_notice), 12, false);
+        notice.setTextColor(0xffc7d7d1);
+        notice.setPadding(dp(4), dp(2), dp(4), dp(8));
+        root.addView(notice);
+
+        LinearLayout updateRow = horizontal();
+        TextView fetchStatus = text(getString(R.string.supporters_status_loading), 11.5f, false);
+        fetchStatus.setTextColor(0xffb4bdb7);
+        updateRow.addView(fetchStatus, new LinearLayout.LayoutParams(0, -2, 1));
+        TextView reload = text(getString(R.string.supporters_refresh), 13, true);
+        reload.setTextColor(accentColor());
+        reload.setPadding(dp(8), dp(7), dp(8), dp(7));
+        updateRow.addView(reload);
+        root.addView(updateRow, new LinearLayout.LayoutParams(-1, -2));
+
+        ScrollView scroll = scrollInside(root);
+        LinearLayout list = vertical();
+        list.setPadding(dp(1), dp(2), dp(1), dp(14));
+        scroll.addView(list, new ScrollView.LayoutParams(-1, -2));
+        showSupporterRows(list); // Show cached list immediately; no network wait on UI thread.
+
+        Runnable refresh = () -> {
+            fetchStatus.setText(R.string.supporters_status_loading);
+            SupporterList.refreshAsync(this, updated -> {
+                if (page != 7 || isFinishing() || isDestroyed()) return;
+                fetchStatus.setText(updated ? R.string.supporters_status_updated
+                        : R.string.supporters_status_cached);
+                showSupporterRows(list);
+            });
+        };
+        reload.setOnClickListener(v -> refresh.run());
+        refresh.run(); // Only while the user is viewing this page; no periodic background service.
+    }
+
+    private void showSupporterRows(LinearLayout list) {
+        list.removeAllViews();
+        List<SupporterList.Supporter> supporters = SupporterList.loadSorted(this);
+        if (supporters.isEmpty()) {
+            TextView empty = text(getString(R.string.supporters_empty), 14, false);
+            empty.setTextColor(0xffbbbbbb);
+            empty.setPadding(dp(6), dp(12), dp(6), dp(12));
+            list.addView(empty);
+            return;
+        }
+        for (int i = 0; i < supporters.size(); i++) {
+            SupporterList.Supporter s = supporters.get(i);
+            LinearLayout row = horizontal();
+            row.setPadding(dp(12), dp(10), dp(12), dp(10));
+            row.setBackground(shape(0xff53635f, 13, 0xff1b1e1e));
+
+            // Thank-you wall: no numbered ranks or donation amounts shown in the UI.
+            TextView thanksIcon = text("♥", 19, true);
+            thanksIcon.setTextColor(accentColor());
+            thanksIcon.setGravity(Gravity.CENTER_VERTICAL);
+            LinearLayout.LayoutParams iconLp = new LinearLayout.LayoutParams(dp(32), -2);
+            iconLp.rightMargin = dp(8);
+            row.addView(thanksIcon, iconLp);
+
+            LinearLayout infoCol = vertical();
+            TextView nameView = text(s.name, 15.5f, true);
+            nameView.setMaxLines(2);
+            infoCol.addView(nameView);
+            if (!s.note.isEmpty()) {
+                TextView noteView = text(s.note, 12, false);
+                noteView.setTextColor(0xffc7d7d1);
+                noteView.setPadding(0, dp(2), 0, 0);
+                infoCol.addView(noteView);
+            }
+            row.addView(infoCol, new LinearLayout.LayoutParams(0, -2, 1));
+
+            LinearLayout.LayoutParams rowLp = new LinearLayout.LayoutParams(-1, -2);
+            rowLp.bottomMargin = dp(8);
+            list.addView(row, rowLp);
+        }
     }
 
     /** No payment SDK, browser tracking, or background process: the user decides in PayPal. */
