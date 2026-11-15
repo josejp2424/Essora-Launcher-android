@@ -1,4 +1,13 @@
+
 {
   "updated": "2026-11-15",
-  "supporters": []
+  "supporters": [
+    {
+      "name": "Fernandez Rosana",
+      "amount": 10.00,
+      "currency": "USD",
+      "note": ""
+    }
+  ]
 }
+
