@@ -51,8 +51,8 @@
         <strong>Essora Launcher</strong>
       </a>
       <h1>Política de privacidad<br><span style="color:var(--green)">Privacy Policy</span></h1>
-      <p class="subtitle">Información clara sobre cómo Essora Launcher utiliza los permisos, guarda las preferencias y consulta el muro de colaboradores. / How Essora Launcher handles permissions, preferences and the supporters wall.</p>
-      <div class="meta"><span>Essora Project</span><span>15 de noviembre de 2026 · November 15, 2026</span><span>org.essora.launcher</span></div>
+      <p class="subtitle">Información sobre permisos opcionales, notificaciones, preferencias y colaboradores. / Information about optional permissions, notifications, preferences and supporters.</p>
+      <div class="meta"><span>Essora Project</span><span>21 de noviembre de 2026 · November 21, 2026</span><span>org.essora.launcher</span></div>
     </div>
   </header>
   <main class="shell">
@@ -67,7 +67,7 @@
       <div class="section">
         <h3>1. Datos que utiliza la aplicación</h3>
         <p>Essora Launcher no requiere crear una cuenta, no muestra publicidad y no integra servicios propios de analítica o seguimiento.</p>
-        <p>Para funcionar como pantalla de inicio, consulta localmente las aplicaciones instaladas (por ejemplo, nombres, iconos e identificadores de paquete) y guarda en el dispositivo tus preferencias: accesos directos, gestos, temas, fondos de pantalla y selección de iconos. Estos datos no se envían a servidores de Essora ni al repositorio de colaboradores.</p>
+        <p>Para funcionar como pantalla de inicio, consulta localmente las aplicaciones instaladas (por ejemplo, nombres, iconos e identificadores de paquete) y guarda en el dispositivo tus preferencias: accesos directos, gestos, vista del escritorio, temas, fondos de pantalla y selección de iconos. Estos datos no se envían a servidores de Essora ni al repositorio de colaboradores.</p>
         <p>Los temas que creás y las imágenes que elegís se almacenan localmente. Solo se comparten con otras aplicaciones si vos lo solicitás, por ejemplo, al exportar o enviar un tema.</p>
       </div>
 
@@ -75,6 +75,7 @@
         <h3>2. Permisos y acceso al dispositivo</h3>
         <ul>
           <li><strong>Cámara:</strong> el permiso <code>CAMERA</code> se solicita cuando usás por primera vez la linterna opcional. Se utiliza para encender o apagar el flash; esta función no toma fotografías ni graba videos.</li>
+          <li><strong>Acceso a notificaciones (opcional):</strong> para mostrar indicadores y vistas previas, Essora puede utilizar el servicio <code>NotificationListenerService</code>. La app explica esta función cuando intentás utilizarla y, si decidís continuar, te dirige a los ajustes de Android para conceder el acceso. No se solicita al instalar ni iniciar el launcher. El permiso se puede revocar en cualquier momento desde Android.</li>
           <li><strong>Fondo de pantalla:</strong> <code>SET_WALLPAPER</code> permite aplicar el fondo seleccionado cuando lo pedís.</li>
           <li><strong>Internet:</strong> se utiliza para consultar la lista pública de colaboradores en GitHub cuando abrís esa sección o pulsás Actualizar; no hay consultas periódicas en segundo plano.</li>
           <li><strong>Aplicaciones e iconos:</strong> se consulta la información local necesaria para mostrar accesos directos y detectar paquetes de iconos compatibles. No se utiliza el permiso general <code>QUERY_ALL_PACKAGES</code>.</li>
@@ -84,7 +85,14 @@
       </div>
 
       <div class="section">
-        <h3>3. Consulta a GitHub y colaboradores</h3>
+        <h3>3. Indicadores y vista previa de notificaciones (opcional)</h3>
+        <p>En Essora Launcher 1.0.30 podés ver indicadores de notificaciones pendientes en los accesos directos y consultar vistas previas al mantener presionado el icono de una aplicación, si habilitaste el acceso. Se utiliza la información de las <strong>notificaciones activas</strong> que proporciona Android, como la aplicación de origen, el título, la hora, el texto visible y los contadores disponibles. Es posible que los números no coincidan con los mensajes realmente no leídos.</p>
+        <p><strong>Alcance del permiso:</strong> Android concede el acceso a notificaciones a nivel del dispositivo, no por aplicación. Al autorizarlo, Essora podría acceder al contenido de notificaciones de otras aplicaciones, incluso mensajes personales y otros datos sensibles, aunque la vista previa solicitada corresponda a una aplicación concreta. Solo se muestra la información que Android y la aplicación emisora dejan disponible; Essora no consulta conversaciones completas ni historiales de WhatsApp, Telegram u otros servicios.</p>
+        <p>Las notificaciones se procesan en el dispositivo para mostrar los indicadores y las vistas previas. <strong>Essora no envía el contenido de las notificaciones a servidores propios, GitHub ni PayPal, y no guarda un historial de mensajes.</strong> Si desactivás el acceso en los ajustes de Android, estas funciones dejan de poder consultar las notificaciones. La linterna, el escritorio y las demás funciones básicas siguen disponibles sin ese permiso.</p>
+      </div>
+
+      <div class="section">
+        <h3>4. Consulta a GitHub y colaboradores</h3>
         <p>Al abrir el muro de colaboradores o tocar Actualizar, la app solicita por HTTPS el archivo público <a href="https://github.com/josejp2424/Essora-Launcher-android/blob/main/supporters.json">supporters.json</a>, alojado por GitHub. Guarda una copia local para mostrar la última lista disponible cuando no hay conexión.</p>
         <p>GitHub puede recibir tu dirección IP y datos técnicos habituales de la conexión. Essora no incorpora a esa consulta tus contactos, la lista de aplicaciones, tus imágenes, tus preferencias ni un identificador de cuenta.</p>
         <p>El muro dentro de la aplicación muestra nombres o apodos y, si corresponde, notas autorizadas. <strong>El archivo público de GitHub también puede contener importes y monedas de las donaciones</strong>, aunque esos importes no aparezcan en el muro de la app. La publicación se realiza únicamente con autorización expresa de cada colaborador.</p>
@@ -92,23 +100,23 @@
       </div>
 
       <div class="section">
-        <h3>4. Donaciones mediante PayPal</h3>
+        <h3>5. Donaciones mediante PayPal</h3>
         <p>Si tocás <em>Apoyar Essora</em>, Android abre el enlace externo <a href="https://paypal.me/essoralinux">paypal.me/essoralinux</a> en tu navegador o en una aplicación compatible. Essora Launcher no procesa pagos, no guarda datos bancarios ni lee tu cuenta de PayPal.</p>
         <p>Los datos que ingreses al realizar una donación se gestionan mediante PayPal, de acuerdo con sus propias condiciones y su política de privacidad. Las donaciones son voluntarias y no desbloquean funciones, contenido o ventajas digitales.</p>
       </div>
 
       <div class="section">
-        <h3>5. Almacenamiento, conservación y eliminación</h3>
+        <h3>6. Almacenamiento, conservación y eliminación</h3>
         <p>Las preferencias, los temas personalizados y la copia de la lista de colaboradores permanecen en el almacenamiento de la app hasta que los eliminás, borrás los datos de Essora Launcher o desinstalás la aplicación, según corresponda. Android puede respaldar algunos datos de aplicaciones mediante sus funciones de copia de seguridad, según la configuración de tu dispositivo.</p>
         <p>Los paquetes exportados o compartidos quedan bajo control del usuario y de la aplicación receptora. Los nombres y datos autorizados publicados en GitHub se mantienen hasta que el responsable actualice o retire la entrada; las copias locales de la lista se reemplazan al volver a actualizarla.</p>
       </div>
 
       <div class="section">
-        <h3>6. Seguridad, terceros y contacto</h3>
+        <h3>7. Seguridad, terceros y contacto</h3>
         <p>La consulta al archivo de GitHub utiliza HTTPS y valida el tamaño y formato de la respuesta. Los datos locales se guardan en el espacio privado de Android. La app no incluye un SDK de anuncios ni un SDK de pago.</p>
         <p>Los servicios externos implicados son <strong>GitHub</strong> (alojamiento de código y archivo público de colaboradores) y <strong>PayPal</strong> (solamente cuando decidís abrir el enlace externo). Esta página no incluye cookies propias, scripts de analítica ni rastreadores; su alojamiento en GitHub Pages puede generar registros técnicos de acceso.</p>
         <p><strong>Responsable:</strong> Essora Project. Para consultas de privacidad, correcciones o solicitudes de retiro, utilizá <a href="https://github.com/josejp2424/Essora-Launcher-android/issues">GitHub Issues de Essora Launcher</a>, sin incluir información sensible en público.</p>
-        <div class="note">Esta política describe Essora Launcher 1.0.29. Si cambian las funciones o el tratamiento de datos, actualizaremos esta página.</div>
+        <div class="note">Esta política describe Essora Launcher 1.0.30. Si cambian las funciones o el tratamiento de datos, actualizaremos esta página.</div>
       </div>
     </section>
 
@@ -120,7 +128,7 @@
       <div class="section">
         <h3>1. Information used by the app</h3>
         <p>Essora Launcher does not require an account, does not display advertisements, and does not include its own analytics or tracking services.</p>
-        <p>To work as a home screen, the app reads locally available information about installed applications (such as names, icons and package identifiers) and stores your preferences on the device: shortcuts, gestures, themes, wallpapers and icon selections. This information is not sent to Essora servers or to the supporters repository.</p>
+        <p>To work as a home screen, the app reads locally available information about installed applications (such as names, icons and package identifiers) and stores your preferences on the device: shortcuts, gestures, home screen layout, themes, wallpapers and icon selections. This information is not sent to Essora servers or to the supporters repository.</p>
         <p>Custom themes and images you select are stored locally. They are only shared with other apps when you explicitly choose to export or share a theme.</p>
       </div>
 
@@ -128,6 +136,7 @@
         <h3>2. Device permissions and access</h3>
         <ul>
           <li><strong>Camera:</strong> the <code>CAMERA</code> permission is requested when you first use the optional flashlight feature. It controls the flash LED; this feature does not capture photos or videos.</li>
+          <li><strong>Notification access (optional):</strong> to show badges and previews, Essora may use <code>NotificationListenerService</code>. The app explains the feature when you choose to use it and, if you continue, takes you to Android settings to grant access. It is not requested when you install or first open the launcher. You can revoke access at any time in Android settings.</li>
           <li><strong>Wallpaper:</strong> <code>SET_WALLPAPER</code> allows the app to apply a wallpaper when you request it.</li>
           <li><strong>Internet:</strong> used to fetch the public supporters list from GitHub when you open that screen or tap Refresh; there are no periodic background requests.</li>
           <li><strong>Apps and icon packs:</strong> local app details are used for shortcuts and compatible icon pack discovery. The broad <code>QUERY_ALL_PACKAGES</code> permission is not requested.</li>
@@ -137,7 +146,14 @@
       </div>
 
       <div class="section">
-        <h3>3. GitHub requests and public supporters</h3>
+        <h3>3. Notification badges and previews (optional)</h3>
+        <p>In Essora Launcher 1.0.30, you can see badges for pending notifications on shortcuts and preview notifications by long-pressing an app icon, provided you have enabled notification access. The feature uses <strong>active notifications</strong> made available by Android, such as the source app, title, time, visible text and available notification counts. Badge counts may differ from the number of unread messages.</p>
+        <p><strong>Scope of access:</strong> Android grants notification access for the device, not one app at a time. When enabled, Essora may have access to notifications from other apps, including personal messages and other sensitive information, even when you are previewing only one selected app. Only information made available by Android and the notifying app can be displayed. Essora does not retrieve full WhatsApp, Telegram or other conversation histories.</p>
+        <p>Notifications are processed on the device to display badges and previews. <strong>Essora does not send notification content to its own servers, GitHub or PayPal, and does not retain a message history.</strong> If you revoke access in Android settings, these features can no longer read notifications. The flashlight, home screen and other basic features remain available without this permission.</p>
+      </div>
+
+      <div class="section">
+        <h3>4. GitHub requests and public supporters</h3>
         <p>When you open the supporters wall or tap Refresh, the app downloads the public <a href="https://github.com/josejp2424/Essora-Launcher-android/blob/main/supporters.json">supporters.json</a> file from GitHub over HTTPS. A local copy is kept so the latest available list can be shown offline.</p>
         <p>GitHub may receive your IP address and routine connection metadata. Essora does not attach your contacts, installed-app list, images, preferences or an Essora account identifier to that request.</p>
         <p>The in-app wall displays approved names or nicknames and optional notes. <strong>The public GitHub file may also contain donation amounts and currencies</strong>, even though these amounts are not displayed in the app. An entry is published only with the supporter's express consent.</p>
@@ -145,23 +161,23 @@
       </div>
 
       <div class="section">
-        <h3>4. Voluntary donations through PayPal</h3>
+        <h3>5. Voluntary donations through PayPal</h3>
         <p>When you tap <em>Support Essora</em>, Android opens the external <a href="https://paypal.me/essoralinux">paypal.me/essoralinux</a> address in your browser or a compatible app. Essora Launcher does not process payments, store bank details or read your PayPal account.</p>
         <p>Information provided when making a donation is handled by PayPal under its own terms and privacy policy. Donations are optional and do not unlock features, content or digital benefits.</p>
       </div>
 
       <div class="section">
-        <h3>5. Storage, retention and deletion</h3>
+        <h3>6. Storage, retention and deletion</h3>
         <p>Preferences, custom themes and the cached supporters list remain in the app's storage until you remove them, clear Essora Launcher app data or uninstall the app, as applicable. Android may back up some application data through its system backup features, depending on your device settings.</p>
         <p>Exported or shared theme packages are controlled by the user and receiving application. Approved public supporter entries remain on GitHub until the maintainer changes or removes them; local cached lists are replaced on refresh.</p>
       </div>
 
       <div class="section">
-        <h3>6. Security, third parties and contact</h3>
+        <h3>7. Security, third parties and contact</h3>
         <p>The GitHub request uses HTTPS and checks response size and format. Local files are stored in Android's app-private storage. The app does not include an advertising SDK or payment SDK.</p>
         <p>The external services involved are <strong>GitHub</strong> (source hosting and public supporters file) and <strong>PayPal</strong> (only when you choose to open the external link). This webpage has no first-party cookies, analytics scripts or trackers; GitHub Pages hosting may generate technical access logs.</p>
         <p><strong>Developer:</strong> Essora Project. For privacy questions, corrections or removal requests, use <a href="https://github.com/josejp2424/Essora-Launcher-android/issues">Essora Launcher GitHub Issues</a>, without posting sensitive information publicly.</p>
-        <div class="note">This policy describes Essora Launcher 1.0.29. We will update this page if app features or data practices change.</div>
+        <div class="note">This policy describes Essora Launcher 1.0.30. We will update this page if app features or data practices change.</div>
       </div>
     </section>
   </main>
